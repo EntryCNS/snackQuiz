@@ -1,6 +1,6 @@
 export const DESIGN = "Let’s kill this Game"
 
-export const GAMELINK = "과자 문제 풀으러 가기"
+export const GAMELINK = "과자 문제 풀러 가기"
 
 export const GAMEINTROTITLE = "Game Introduction"
 

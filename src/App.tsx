@@ -4,6 +4,8 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './components/main';
 import Nav from './components/common/nav';
+import GameStart from './components/gameStart';
+import GameMain from './components/gameMain';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Nav/>
       <Routes>
         <Route path="/" element={<Main/>} />
+        <Route path="/gameStart" element={<GameStart/>} />
+        <Route path='/gameMain' element={<GameMain/>} />
       </Routes>
     </Router>
   );
