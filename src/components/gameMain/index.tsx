@@ -15,6 +15,8 @@ import { useLocation } from 'react-router-dom';
 // 왠지 모르겠지만 useEffect에 stt시작 코드를 넣으면 뭔가 꼬이는 듯 -> 컴퓨터 껐켜 해야함
 // https://velog.io/@bami/%ED%83%80%EC%9D%B4%EB%A8%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-with-JavaScript
 const GameMain = () => {
+    const RANDOMNUMLIST = useState<Array<number>>([...Array(snackNumber)].map((v,i) => i).sort(() => Math.random() - 0.5))
+    const [CurrentRandomListNum, SetCurrentRandomListNum] = useState<number>(0)
     const [CurrentQuizNum,setCurrentQuizNum] = useState<number>(0)
     const [InputWord, setInputWord] = useState<string>('')
     const [IsTimerRunning, setIsTimerRunning] = useState<boolean>(false)
@@ -37,8 +39,10 @@ const GameMain = () => {
     const AnswerLetterNumber = snackAnswerList[CurrentQuizNum].length;
 
     const onSkip = async() => {
-        setCurrentQuizNum(CurrentQuizNum+1)
-        isEnd()
+        SetCurrentRandomListNum((CurrentRandomListNum)=>CurrentRandomListNum+1)
+        setCurrentQuizNum(RANDOMNUMLIST[0][CurrentRandomListNum])
+
+        // isEnd()
     }
 
     const onStopStart = () => {
@@ -59,19 +63,20 @@ const GameMain = () => {
         }
     }
     
-    const isEnd = () => {
-        if(CurrentQuizNum >= snackNumber - 1 ){
-            setCurrentQuizNum(snackNumber - 1)
-        }
-    }
+    // const isEnd = () => {
+    //     if(CurrentQuizNum >= snackNumber - 1 ){
+    //         setCurrentQuizNum(snackNumber - 1)
+    //     }
+    // }
 
     const onCorrect = async() => {
         setIsCorrect(true)
         setAnswerCount(AnswerCount + 1)
 
         setTimeout(()=>{
-            setCurrentQuizNum(CurrentQuizNum + 1)
-            isEnd()
+            SetCurrentRandomListNum((CurrentRandomListNum)=>CurrentRandomListNum+1)
+            setCurrentQuizNum(RANDOMNUMLIST[0][CurrentRandomListNum])
+            // isEnd()
 
             setIsCorrect(false)
         },500)
