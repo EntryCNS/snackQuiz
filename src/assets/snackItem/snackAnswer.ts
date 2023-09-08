@@ -4,21 +4,20 @@ export const snackAnswerList = [
     "칸쵸",
     "얼초",
     "허니버터칩",
-    "콩고물옥수수깡",
+    "도리토스",
     "스윙칩",
     "초코송이",
     "포카칩",
     "홈런볼",
     "버터와플",
     "썬칩",
-    "프링글스",
     "콘칩",
     "오징어집",
     "빼빼로",
     "오레오",
     "고래밥",
     "꼬깔콘",
-    "오징어땅콩",
+    "오징어 땅콩",
     "오감자",
     "오사쯔",
     "꼬북칩",
@@ -28,7 +27,7 @@ export const snackAnswerList = [
     "꿀꽈배기",
     "치토스",
     "맛동산",
-    "도리토스"
+    "콩고물 옥수수깡",
 ]
 
-export const snackNumber = 7;
+export const snackNumber = snackAnswerList.length;

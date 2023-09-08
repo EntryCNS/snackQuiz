@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { BLACK_COLOR } from "../common/colorTheme"
+import { BLACK_COLOR, WHITE_COLOR } from "../common/colorTheme"
 
 export const GameMainLayout = styled.div`
     margin-top: 7.7vh;
@@ -51,6 +51,13 @@ export const SkipIcon = styled.img`
     height: 2.3vh;
 `
 
+export  const RestartSvg = styled.svg`
+    margin-left: 1.25vh;
+
+    width: 2.5vh;
+    height: 2.5vh;
+`
+
 export const QuizImg = styled.img`
     width: 37.5vh;
     height: 37.5vh;
@@ -70,6 +77,15 @@ export const answerBox = styled.div`
     height: 12.5vh;
     border-radius: 2.5rem;
     border: 5px solid ${BLACK_COLOR};
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: ${BLACK_COLOR};
+    font-family: Pretendard;
+    font-size: 6.25rem;
+    font-weight: 800;
 `
 
 export const GameInfoRow = styled.div`
@@ -102,3 +118,30 @@ export const CurrectNumImg = styled.img`
     width: 6.25vh;
     height: 5.05vh;
 `
+
+export const CorrectImg = styled.img`
+    position: absolute;
+
+    width: 90vh;
+    height: 39vh;
+`
+
+export const TimeoutImgBox = styled.div`
+    position: absolute;
+
+`
+
+export const TimeoverImg = styled.img`
+
+`
+
+export const TimeoverScoreText = styled.div`
+    position: absolute;
+    bottom: 14%;
+    left: 44.5%;
+
+    color: ${WHITE_COLOR};
+    font-family: Shrikhand;
+    font-size: 100px;
+`
+
