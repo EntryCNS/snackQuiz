@@ -82,6 +82,12 @@ const GameMain = () => {
         },500)
     }
 
+    const onContextMenuHandler = (e:any) => {
+        e.preventDefault();
+
+        onCorrect()
+    }
+
     const onTimeover = () => {
         setIsTimeover(true)
 
@@ -100,6 +106,15 @@ const GameMain = () => {
         setTimer((Timer) => Timer - 100)
     }
 
+    // const keyDown = (event:React.KeyboardEvent) => {
+    
+    //     if (event.key === "T" || event.key === "t") {
+    //       event.preventDefault();
+
+    //       onCorrect()
+    //     }
+    //   };
+
     // let TimerInterval = (setInterval(manageTimer,1000))
 
     useEffect(()=>{
@@ -108,7 +123,6 @@ const GameMain = () => {
             onCorrect()
         }
     },[transcript])
-
     
     useEffect(()=>{
         if(Timer < 0){
@@ -125,7 +139,9 @@ const GameMain = () => {
         }
 
         // if (TimerRef.current !== null) return;
-        TimerRef.current = window.setInterval(handleCount, 1000);  
+        TimerRef.current = window.setInterval(handleCount, 1000);
+
+        // keyDown()
       }, []);
     
     // const loopTimer = 
@@ -200,7 +216,7 @@ const GameMain = () => {
                         </S.RestartSvg>
                     </S.HeaderBtn>
                 }
-                <S.HeaderBtn onClick={onSkip}>
+                <S.HeaderBtn onClick={onSkip} onContextMenu={onContextMenuHandler}>
                     {SKIP}
                     <S.StopIcon src={SKIPICON}/>
                 </S.HeaderBtn>
