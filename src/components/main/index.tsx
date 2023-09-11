@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './style';
 import Pic1 from "../../assets/MainPic.svg"
-import {DESIGN,GAMEINTROTITLE,GAMEINTROTXT,GAMELINK} from "./Txt"
+import {DESIGN,GAMEINTROTITLE,GAMEINTROTXT,GAMELINK} from "./txt"
 import CorrectSign from '../common/correctSign';
 
 const Main = () => {
